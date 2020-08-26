@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faCalendarAlt, faFlag, faThumbsUp, faSearch, faArrowCircleLeft, faArrowCircleRight, faPhone, faEnvelope, faMapMarkerAlt, faFax, faIdBadge } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'foodyy';
+  title = 'hello';
+  calendar = faCalendarAlt;
+  flag = faFlag;
+  likes = faThumbsUp;
+  search = faSearch;
+  left = faArrowCircleLeft;
+  right = faArrowCircleRight;
+  phone = faPhone;
+  mail = faEnvelope;
+  map = faMapMarkerAlt;
+  fax = faFax;
+  id = faIdBadge;
 }
