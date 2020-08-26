@@ -22,7 +22,7 @@ $heading-color: #222831;
 input {
     height: 30px;
     position: relative;
-    width: 80%;
+    width: 100%;
 }
 
 button {
@@ -282,13 +282,18 @@ button:hover {
                 color: $heading-color;
                 font-family: 'Bebas Neue', cursive;
                 font-size: 1.5rem;
-                margin-bottom: 15%;
+                margin-bottom: 50px;
             }
 
             .logo {
                 color: $heading-color;
                 font-size: 2rem;
                 text-decoration: none;
+            }
+
+            .logo:hover {
+                color: white;
+                transition: 0.2s ease-in;
             }
         }
 
@@ -298,35 +303,39 @@ button:hover {
 
             p {
                 line-height: 2;
-                margin-bottom: 5%;
+                margin: 5% 0;
             }
 
             .contact-item {
-                margin: 0 5%;
+                margin: 0 10% 0 0;
             }
         }
 
         .vertical-menu {
-            // margin-top: 35%;
+            .vm-item {
+                margin: 10% 0 5% 10%;
+
+                span {
+                    font-size: 0.7rem;
+                    color: white;
+                }
+    
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+    
+                a:hover {
+                    color: $heading-color;
+                    transition: 0.2s ease-in;
+                }
+
+                ul {
+                    color: $heading-color;
+                }
+            }
         }
 
-        .vm-item {
-            span {
-                font-size: 0.7rem;
-                color: white;
-            }
-
-            a {
-                text-decoration: none;
-                color: white;
-            }
-
-            a:hover {
-                color: $heading-color;
-                transition: 0.2s ease-in;
-            }
-        }
-        
         .links {
             width: 15%;
         }
