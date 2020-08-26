@@ -7,7 +7,14 @@ import { faCalendarAlt, faFlag, faThumbsUp, faSearch, faArrowCircleLeft, faArrow
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'hello';
+
+  navbarCollapsed: Boolean = true;
+ 
+  onToggleNavbarCollapsed(): void {
+    this.navbarCollapsed = !this.navbarCollapsed;
+  }
+
+  title = 'Foodyy';
   calendar = faCalendarAlt;
   flag = faFlag;
   likes = faThumbsUp;

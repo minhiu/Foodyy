@@ -9,7 +9,7 @@ $heading-color: #222831;
 %imgs-main {
     width: 300px;
     max-height: 240px;
-    float: left;
+    object-fit: cover;
 }
 
 %headers-main {
@@ -19,22 +19,118 @@ $heading-color: #222831;
     margin-bottom: 0;
 }
 
-input {
-    height: 30px;
-    position: relative;
-    width: 100%;
+// PC
+@media only screen and (min-width: 1200px) {
+    // Header
+    .logo {
+        margin-right: 25% !important; 
+    }
+
+    // Footer 
+    .links, .menus, .gallery {
+        display: block !important;
+    }
 }
 
-button {
-    background-color: #f9f7f7;
-    color: $special-color;
-    height: 36px;
-    width: 36px;
+// iPad Pro
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    // Header
+    .topnav {
+        padding: 1% 10% !important;
+    }
+
+    .logo {
+        margin-right: 15% !important;
+    }
+
+    // Body
+    .main {
+        padding-bottom: 5%;
+    }
+
+    .page-item {
+        margin: 0 2% !important;
+    }
+    
+    // Footer
+    .social {
+        padding-bottom: 5%;
+    }
+    
 }
 
-button:hover {
-    background-color: #dbe2ef;
-    transition: ease-in;
+// iPad
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    // Header
+    .logo {
+        font-size: 2rem !important;
+        margin-right: 15% !important;
+    }
+
+    .nav-link {
+        font-size: 1.5rem !important;
+    }
+
+    .page-item {
+            margin: 0 5% !important;
+        }
+
+    .selected-menu {
+        font-size: 2rem !important;
+        margin: 7% 0 !important;
+    }
+
+}
+
+// Horizontal Mobile
+@media only screen and (max-width: 767px) {
+    .nav-link {
+        font-size: 1.2rem !important;
+        margin: 1% !important;
+        padding: 0 !important;
+    }
+
+    .page-item {
+        margin: 0 5% !important;
+    }
+
+    .selected-menu {
+        margin: 7% 0 !important;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+    header {
+        background-size: 100% 400px !important;
+
+        .navbar-nav {
+            padding-top: 10%;
+        }
+
+        .selected-menu {
+            margin: 15% 0 !important;
+        }
+    }
+
+    body {
+        .page-item {
+            margin: 0 5% !important;
+        }
+
+        .page-item:hover, .cur-page {
+            background-color: white !important;
+            font-weight: 600 !important;
+        }
+    }
+
+    footer {
+        background-size: 100% 400px !important;
+    }
+}
+
+// Hide Footer for mobile devices
+.links, .menus, .gallery {
+    display: none;
 }
 
 .flex-container {
@@ -42,8 +138,6 @@ button:hover {
 }
 
 .description {
-    margin-left: 5%;
-
     .sub-header {
         justify-content: space-around;
         margin-bottom: 5%;
@@ -51,8 +145,6 @@ button:hover {
         .flex-items {
             color: grey;
             font-size: 0.8rem;
-            width: 9rem;
-            max-width: 9rem;
         }
     }
 }
@@ -76,25 +168,28 @@ button:hover {
 
 
 .whole-page {
-    .header {
+    header {
         background-image: url(../assets/images/background.jpeg);
         background-repeat: no-repeat;
         background-size: 100%;
         height: 350px;
         margin: 0;
         text-align: center;
-    
+        
         .topnav {
-            position: relative;
-            top: 10%;
+            padding: 1% 10%;
         
             a {
                 text-decoration: none;
             }
 
+            button {
+                background-color: $heading-color;
+            }
+
             .logo {
                 font-size: 3rem;
-                margin-right: 10%;
+                margin-right: 5%;
             }
 
             .logo:hover {
@@ -102,14 +197,14 @@ button:hover {
                 transition: 0.2s ease-in;
             }
         
-            .nav-item { 
+            .nav-link { 
                 font-family: $nav-font;
                 font-size: 2rem;
                 color: $heading-color;
                 margin: 5% 2% 0;
             }
 
-            .nav-item:hover {
+            .nav-link:hover {
                 color: white;
                 transition: 0.2s ease-in;
             }
@@ -119,35 +214,31 @@ button:hover {
                 text-decoration: underline;
             }
         }
-    
+
         h1 {
             color: white;
             font-family: $h2-font;
             font-size: 3rem;
-            margin: 5% 0 4% 0;
+            margin: 3% auto;
         }
 
-        .breadcrumb {
+        .bread-crumb {
             color: $heading-color;
             font-style: italic;
             font-family: $p-font;
         }
 
-        .breadcrumb:hover {
+        .bread-crumb:hover {
             color: white;
             transition: 0.2s ease-in;
         }
     }
 
-    .body {
+    body {
         padding: 5% 15%;
         background-color: white;
-
+        margin: 0 !important;
         .main {
-            margin-right: 10%;
-            width: 70%;
-            display: inline-block;
-        
             .main-item {
                 border: 0.05rem solid #eaeaea;
                 margin-bottom: 5%;
@@ -162,8 +253,7 @@ button:hover {
 
                 .info {
                     font-family: $p-font;
-                    font-size: 1.1rem;
-                    max-width: 30rem;
+                    font-size: 1.1rem;                  
                 }
 
                 .read-more {
@@ -186,15 +276,41 @@ button:hover {
     }
 
     .side-bar {
-        display: inline-block;
-        width: 20%;
         margin: auto;
         vertical-align: top;
         position: relative;
         
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url("../assets/icons/search-solid.svg");
+            background-size: 20px 20px;
+            background-position: 95% 50%; 
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 20px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+        
+        button {
+            background-color: #f9f7f7;
+            color: $special-color;
+            height: 36px;
+            width: 36px;
+        }
+        
+        button:hover {
+            background-color: #dbe2ef;
+            transition: ease-in;
+        }
+        
         h2 {
             font-family: $h2-font;
-            margin: 5% 0;
+            margin: 10% 0 5%;
         }
     
         .categories {
@@ -210,9 +326,12 @@ button:hover {
         }
     
         .recent-post {
+            .side-item {
+                margin-bottom: 5%;
+            }
+
             .img-side {
-                width: 50px;
-                height: 50px;
+                padding-right: 0 !important;
                 object-fit: cover;
             }
         
@@ -230,18 +349,22 @@ button:hover {
                 transition: 0.2s ease-in;
             }
         }
-    
-        .tag-item {
-            color: $heading-color;
-            background-color: #e0ece4;
-            display: inline-block;
-            margin: 0 10% 5%;
-            padding: 3%;
-            text-decoration: none;
+        
+        .tags {
+            margin-bottom: 5%;
+
+            .tag-item {
+                color: $heading-color;
+                background-color: #e0ece4;
+                display: inline-block;
+                text-decoration: none;
+                text-align: center;
+            }
         }
     
         .tag-item:hover {
-            font-size: 1.5rem;
+            background-color: $special-color;
+            transition: 0.2s ease-in;
         }
     }
     
@@ -267,22 +390,26 @@ button:hover {
         }
     }
 
-    .footer {
+    footer {
         background-image: url(../assets/images/background.jpeg);
         background-repeat: no-repeat;
         background-size: 100%;
-        height: 350px;
         justify-content: center;
         padding: 0 20%;
+        margin: 0 !important;
 
         .footer-item {
             margin-top: 2%;
+            
+            li {
+                list-style-type: none;
+            }
 
             h3 {
                 color: $heading-color;
                 font-family: 'Bebas Neue', cursive;
                 font-size: 1.5rem;
-                margin-bottom: 50px;
+                margin-bottom: 5%;
             }
 
             .logo {
@@ -299,7 +426,6 @@ button:hover {
 
         .social {
             color: white;
-            width: 40%;
 
             p {
                 line-height: 2;
@@ -313,7 +439,7 @@ button:hover {
 
         .vertical-menu {
             .vm-item {
-                margin: 10% 0 5% 10%;
+                margin: 10% 0 5%;
 
                 span {
                     font-size: 0.7rem;
@@ -329,23 +455,9 @@ button:hover {
                     color: $heading-color;
                     transition: 0.2s ease-in;
                 }
-
-                ul {
-                    color: $heading-color;
-                }
             }
         }
-
-        .links {
-            width: 15%;
-        }
-
-        .menus {
-            width: 15%;
-        }
-
         .gallery {
-            width: 30%;
 
             .gallery-flex {
                 flex-wrap: wrap;
