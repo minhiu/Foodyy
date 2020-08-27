@@ -1,8 +1,36 @@
-<section class="whole-page">
+<div id="wrapper">
   <header>
-    <nav class="navbar navbar-expand-md navbar-dark topnav">
+    <nav class="small-nav navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container">
-        <a href="#" class="logo">Foodyy</a>
+        <div class="contacts navbar-brand">
+          <ul>
+            <li class="contact-item"><fa-icon [icon]="phone"></fa-icon></li>
+            <li class="contact-item"><fa-icon [icon]="mail"></fa-icon></li>
+            <li class="contact-item"><fa-icon [icon]="map"></fa-icon></li>
+            <li class="contact-item"><fa-icon [icon]="fax"></fa-icon></li>
+            <li class="contact-item"><fa-icon [icon]="id"></fa-icon></li>
+          </ul>
+        </div>
+        <ul class="navbar-nav">
+          <div class="collapse navbar-collapse">
+            <li class="nav-item">
+              <span><fa-icon [icon]="login"></fa-icon></span>
+              <a href="#" class="nav-link">LOGIN</a>
+            </li>
+            <li class="nav-item">
+              <span><fa-icon [icon]="register"></fa-icon></span>
+              <a href="#" class="nav-link">REGISTER</a>
+            </li>
+            <li class="nav-item">
+              <fa-icon [icon]="search"></fa-icon>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <nav class="navbar navbar-expand-md navbar-dark">
+        <a href="#" class="logo navbar-brand">Foodyy</a>
         <button 
           class="navbar-toggler" 
           type="button" 
@@ -15,200 +43,277 @@
         </button>
   
         <div class="collapse navbar-collapse" [ngClass]="{ show: !navbarCollapsed }" id="main-nav">
-          <div class="navbar-nav">
-            <a href="#" class="nav-item nav-link">Home</a>
-            <a href="#" class="nav-item nav-link">Food</a>
-            <a href="#" class="nav-item nav-link">Gallery</a>
-            <a href="#" class="nav-item nav-link active">Blog</a>
-            <a href="#" class="nav-item nav-link">About</a>
-            <a href="#" class="nav-item nav-link">Contact</a>
-          </div>
+          <ul class="navbar-nav ml-auto" >
+            <li class="nav-item">
+              <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Food</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link active">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Contact</a>
+            </li>
+          </ul>
         </div>
+      </nav>
+      <div *ngIf="navbarCollapsed">
+        <h1 class="menu-header">"BLOG LIST"</h1>
+        <a href="#" class="menu-breadcrumb">Home</a>
+        <span> > </span>
+        <a href="#" class="menu-breadcrumb">Blog</a>
       </div>
-    </nav>
-    <div *ngIf="navbarCollapsed">
-      <h1 class="selected-menu">"BLOG LIST"</h1>
-      <a href="#" class="bread-crumb">Home</a>
-      <span> > </span>
-      <a href="#" class="bread-crumb">Blog</a>
     </div>
   </header>
 
-  <body class="row">
-    <div class="main col-xl-8 col-lg-12 col-md-12">
-      <div class="main-item row">
-        <img src="assets/images/pho-bo.jpeg" alt="pho-bo" class="img-main col-xl-5 col-lg-4 col-md-4 col-sm-12 col-12">
-        <div class="description col-xl-7 col-lg-8 col-md-8 col-sm-12 col-12">
-          <h2 class="header-main">Pho Bo</h2>
-          <div class="sub-header row">
-            <div class="flex-items col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="calendar"></fa-icon> August 24, 2020</div>
-            <div class="flex-items col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="flag"></fa-icon> Vietnamese Food</div>
-            <div class="flex-items col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><fa-icon [icon]="likes"></fa-icon> 96</div>
+  <section id="content">
+    <div class="container">
+      <div class="row">
+        <div class="main col-xl-9 col-lg-12 col-md-12">
+          <div class="main-item row">
+            <img src="assets/images/pho-bo.jpeg" alt="pho-bo" class="img-main col-xl-5 col-lg-4 col-md-4 col-sm-12 col-12">
+            <div class="description col-xl-7 col-lg-8 col-md-8 col-sm-12 col-12">
+              <div class="header-main">
+                <h2>Pho Bo</h2>
+                <div class="sub-header row"> <!-- !!! -->
+                  <div class="flex-items col-xl-4 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="calendar"></fa-icon> August 24, 2020</div>
+                  <div class="flex-items col-xl-4 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="flag"></fa-icon> Vietnamese Food</div>
+                  <div class="flex-items col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><fa-icon [icon]="likes"></fa-icon> 96</div>
+                </div>
+              </div>
+              <p class="text-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ...</p><a class="read-more" href="#">Read more >></a>
+            </div>
           </div>
-          <p class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ...</p><a class="read-more" href="#">Read more >></a>
-        </div>
-      </div>
-      <div class="main-item row">
-        <img src="assets/images/pad-thai.jpg" alt="pad-thai" class="img-main col-xl-5 col-lg-4 col-md-4 col-sm-12 col-12">
-        <div class="description col-xl-7 col-lg-8 col-md-8 col-sm-12 col-12">
-          <h2 class="header-main">Pad Thai</h2>
-          <div class="sub-header row">
-            <div class="flex-items col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="calendar"></fa-icon> July 22, 2020</div>
-            <div class="flex-items col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="flag"></fa-icon> Thais Food</div>
-            <div class="flex-items col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><fa-icon [icon]="likes"></fa-icon> 47</div>
-          </div>
-          <p class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ...</p><a class="read-more" href="#">Read more >></a>
-        </div>
-      </div>
-      <div class="main-item row">
-        <img src="assets/images/ramen.jpg" alt="ramen" class="img-main col-xl-5 col-lg-4 col-md-4 col-sm-12 col-12">
-        <div class="description col-xl-7 col-lg-8 col-md-8 col-sm-12 col-12">
-          <h2 class="header-main">Ramen</h2>
-          <div class="sub-header row">
-            <div class="flex-items col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="calendar"></fa-icon> June 16, 2020</div>
-            <div class="flex-items col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="flag"></fa-icon> Japanese Food</div>
-            <div class="flex-items col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><fa-icon [icon]="likes"></fa-icon> 142</div>
-          </div>
-          <p class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ...</p><a class="read-more" href="#">Read more >></a>
-        </div>
-      </div>
-      <div class="main-item row">
-        <img src="assets/images/udon.jpg" alt="udon" class="img-main col-xl-5 col-lg-4 col-md-4 col-sm-12 col-12">
-        <div class="description col-xl-7 col-lg-8 col-md-8 col-sm-12 col-12">
-          <h2 class="header-main">Udon</h2>
-          <div class="sub-header row">
-            <div class="flex-items col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="calendar"></fa-icon> March 15, 2020</div>
-            <div class="flex-items col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="flag"></fa-icon> Japanese Food</div>
-            <div class="flex-items col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><fa-icon [icon]="likes"></fa-icon> 54</div>
-          </div>
-          <p class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ...</p><a class="read-more" href="#">Read more >></a>
-        </div>
-      </div>
-    </div>
 
-    <div class="side-bar col-xl-3 col-lg-12 col-md-12">  
-      <input type="text" placeholder="Search...">
-      <div class="categories">
-        <h2>Categories</h2>
-        <hr class="special-hr">
-        <a href="#">Western Food</a><hr>
-        <a href="#">Eastern Food</a><hr>
-        <a href="#">Middle Eastern Food</a><hr>
-        <a href="#">Asian Food</a><hr>
-        <a href="#">Indian Food</a><hr>
-      </div>
-      <div class="recent-post">
-        <h2>Recent Post</h2>
-        <hr class="special-hr">
-        <div class="side-item row">
-          <img src="assets/images/pho-bo.jpeg" alt="pho-bo" class="img-side col-xl-4 col-lg-4 col-sm-4 col-4">
-          <div class="description col-xl-8 col-lg-8 colg-sm-8 col-8">
-            <a class="header-side" href="#">Pho Bo</a>
-            <div class="sub-header row">
-              <div class="flex-items col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"><fa-icon [icon]="calendar"></fa-icon> August 24, 2020</div>
-              <div class="flex-items col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"><fa-icon [icon]="likes"></fa-icon> 96</div>
+          <div class="main-item row">
+            <img src="assets/images/pad-thai.jpg" alt="pad-thai" class="img-main col-xl-5 col-lg-4 col-md-4 col-sm-12 col-12">
+            <div class="description col-xl-7 col-lg-8 col-md-8 col-sm-12 col-12">
+              <div class="header-main">
+                <h2>Pad Thai</h2>
+                <div class="sub-header row">
+                  <div class="flex-items col-xl-4 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="calendar"></fa-icon> July 22, 2020</div>
+                  <div class="flex-items col-xl-4 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="flag"></fa-icon> Thais Food</div>
+                  <div class="flex-items col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><fa-icon [icon]="likes"></fa-icon> 47</div>
+                </div>
+              </div>
+              <p class="text-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ...</p><a class="read-more" href="#">Read more >></a>
             </div>
           </div>
-        </div>
-        <div class="side-item row">
-          <img src="assets/images/pad-thai.jpg" alt="pad-thai" class="img-side col-xl-4 col-lg-4 col-sm-4 col-4">
-          <div class="description col-xl-8  col-lg-8 colg-sm-8 col-8">
-            <a class="header-side" href="#">Pad Thai</a>
-            <div class="sub-header row">
-              <div class="flex-items col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"><fa-icon [icon]="calendar"></fa-icon> July 22, 2020</div>
-              <div class="flex-items col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"><fa-icon [icon]="likes"></fa-icon> 47</div>
-            </div>
-          </div>
-        </div>
-        <div class="side-item row">
-          <img src="assets/images/ramen.jpg" alt="ramen" class="img-side col-xl-4 col-lg-4 col-sm-4 col-4">
-          <div class="description col-xl-8  col-lg-8 colg-sm-8 col-8">
-            <a class="header-side" href="#">Ramen</a>
-            <div class="sub-header row">
-              <div class="flex-items col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"><fa-icon [icon]="calendar"></fa-icon> June 16, 2020</div>
-              <div class="flex-items col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"><fa-icon [icon]="likes"></fa-icon> 142</div>
-            </div>
-          </div>
-        </div>
-        <div class="side-item row">
-          <img src="assets/images/udon.jpg" alt="udon" class="img-side col-xl-4 col-lg-4 col-sm-4 col-4">
-          <div class="description col-xl-8  col-lg-8 colg-sm-8 col-8">
-            <a class="header-side" href="#">Udon</a>
-            <div class="sub-header row">
-              <div class="flex-items col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"><fa-icon [icon]="calendar"></fa-icon> March 15, 2020</div>
-              <div class="flex-items col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"><fa-icon [icon]="likes"></fa-icon> 54</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tags">
-        <h2>Tags</h2>
-        <hr class="special-hr">
-        <div class="row">
-          <a href="#" class="tag-item col-xl-4 col-lg-2 col-sm-2 col-4">Noodle</a>
-          <a href="#" class="tag-item col-xl-4 col-lg-2 col-sm-2 col-4">Spicy</a>
-          <a href="#" class="tag-item col-xl-4 col-lg-2 col-sm-2 col-4">Oily</a>
-          <a href="#" class="tag-item col-xl-4 col-lg-2 col-sm-2 col-4">Crunchy</a>
-        </div>
-      </div>
-    </div>
 
-    <div class="pages flex-container col-lg-12">
-      <div class="page-item"><a href="#"><fa-icon [icon]="left"></fa-icon></a></div>
-      <div class="page-item"><a href="#">1</a></div>
-      <div class="page-item"><a href="#">2</a></div>
-      <div class="page-item cur-page"><a href="#">3</a></div>
-      <div class="page-item"><a href="#">4</a></div>
-      <div class="page-item"><a href="#">5</a></div>
-      <div class="page-item"><a href="#"><fa-icon [icon]="right"></fa-icon></a></div>
-    </div>
-  </body>
-  <footer class="row">
-    <div class="social footer-item col-xl-4 col-xl-4 col-sm-12 col-12">
-      <a href="#" class="logo">Foodyy</a>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
-      <div class="contacts flex-container">
-        <div class="contact-item"><fa-icon [icon]="phone"></fa-icon></div>
-        <div class="contact-item"><fa-icon [icon]="mail"></fa-icon></div>
-        <div class="contact-item"><fa-icon [icon]="map"></fa-icon></div>
-        <div class="contact-item"><fa-icon [icon]="fax"></fa-icon></div>
-        <div class="contact-item"><fa-icon [icon]="id"></fa-icon></div>
-      </div>
-    </div>
-    <div class="links footer-item col-xl-2 col-xl-2 col-sm-12 col-12">
-      <h3>LINKS</h3>
-      <ul class="vertical-menu ">
-        <li class="vm-item"><a href="#">Top Food</a></li>
-        <li class="vm-item"><a href="#">New Recipes</a></li>
-        <li class="vm-item"><a href="#">How - to</a></li>
-        <li class="vm-item"><a href="#">Tips</a></li>
-        <li class="vm-item"><a href="#">Food Tour</a></li>
-      </ul>
-    </div>
-    <div class="menus footer-item col-xl-2 col-xl-2 col-sm-12 col-12">
-      <h3>MENU</h3>
-      <ul class="vertical-menu">
-        <li class="vm-item"><a href="#">Home</a></li>
-        <li class="vm-item"><a href="#">Food</a></li>
-        <li class="vm-item"><a href="#">Gallery</a></li>
-        <li class="vm-item active"><a href="#">Blog</a></li>
-        <li class="vm-item"><a href="#">About</a></li>
-        <li class="vm-item"><a href="#">Contact</a></li>
-      </ul>
-    </div>
-    <div class="gallery footer-item col-xl-4 col-xl-4 col-sm-12 col-12p">
-      <h3>GALLERY</h3>
-      <div class="gallery-flex row">
-        <div class="gallery-item"><img src="assets/images/burgers.jpg" alt="" class="gallery-img"></div>
-        <div class="gallery-item"><img src="assets/images/lasagna.jpg" alt="" class="gallery-img"></div>
-        <div class="gallery-item"><img src="assets/images/pizza.jpg" alt="" class="gallery-img"></div>
-        <div class="gallery-item"><img src="assets/images/steak.jpg" alt="" class="gallery-img"></div>
-        <div class="gallery-item"><img src="assets/images/sushi.jpg" alt="" class="gallery-img"></div>
-        <div class="gallery-item"><img src="assets/images/tacos.jpg" alt="" class="gallery-img"></div>
-        <div class="gallery-item"><img src="assets/images/noodle.jpg" alt="" class="gallery-img"></div>
-        <div class="gallery-item"><img src="assets/images/salmon.jpg" alt="" class="gallery-img"></div>
-      </div>
-    </div>
+          <div class="main-item row">
+            <img src="assets/images/ramen.jpg" alt="ramen" class="img-main col-xl-5 col-lg-4 col-md-4 col-sm-12 col-12">
+            <div class="description col-xl-7 col-lg-8 col-md-8 col-sm-12 col-12">
+              <div class="header-main">
+                <h2 class="header-main">Ramen</h2>
+                <div class="sub-header row">
+                  <div class="flex-items col-xl-4 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="calendar"></fa-icon> June 16, 2020</div>
+                  <div class="flex-items col-xl-4 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="flag"></fa-icon> Japanese Food</div>
+                  <div class="flex-items col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><fa-icon [icon]="likes"></fa-icon> 142</div>
+                </div>
+              </div>
+              <p class="text-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ...</p><a class="read-more" href="#">Read more >></a>
+            </div>
+          </div>
 
+          <div class="main-item row">
+            <img src="assets/images/udon.jpg" alt="udon" class="img-main col-xl-5 col-lg-4 col-md-4 col-sm-12 col-12">
+            <div class="description col-xl-7 col-lg-8 col-md-8 col-sm-12 col-12">
+              <div class="header-main">
+                <h2>Udon</h2>
+                <div class="sub-header row">
+                  <div class="flex-items col-xl-4 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="calendar"></fa-icon> March 15, 2020</div>
+                  <div class="flex-items col-xl-4 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="flag"></fa-icon> Japanese Food</div>
+                  <div class="flex-items col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><fa-icon [icon]="likes"></fa-icon> 54</div>
+                </div>
+              </div>
+              <p class="text-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ...</p><a class="read-more" href="#">Read more >></a>
+            </div>
+          </div>
+
+           <div class="pages col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <ul>
+              <li><a class="page-item" href="#"><fa-icon [icon]="left"></fa-icon></a></li>
+              <li><a class="page-item" href="#">1</a></li>
+              <li><a class="page-item" href="#">2</a></li>
+              <li><a class="page-item cur-page" href="#">3</a></li>
+              <li><a class="page-item" href="#">4</a></li>
+              <li><a class="page-item" href="#">5</a></li>
+              <li><a class="page-item" href="#"><fa-icon [icon]="right"></fa-icon></a></li>
+            </ul>
+          </div>
+        </div>
+    
+        <div class="sidebar col-xl-3 col-lg-12 col-md-12">  
+          <input type="text" placeholder="Search...">
+          <div class="categories">
+            <h2>CATEGORIES</h2>
+            <ul>
+              <li><a href="#">Western Food</a></li>
+              <li><a href="#">Eastern Food</a></li>
+              <li><a href="#">Middle Eastern Food</a></li>
+              <li><a href="#">Asian Food</a></li>
+              <li><a href="#">Indian Food</a></li>
+            </ul>   
+          </div>
+          <div class="recent-post">
+            <h2>RECENT POST</h2>
+            <div class="container">
+              <div class="side-item row">
+                <img src="assets/images/pho-bo.jpeg" alt="pho-bo" class="img-side col-xl-3 col-lg-4 col-sm-4 col-4">
+                <div class="description col-xl-9 col-lg-8 colg-sm-8 col-8">
+                  <a class="header-side" href="#">Pho Bo</a>
+                  <div class="sub-header row">
+                    <div class="flex-items col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"><fa-icon [icon]="calendar"></fa-icon> August 24, 2020</div>
+                    <div class="flex-items col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"><fa-icon [icon]="likes"></fa-icon> 96</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="container">
+              <div class="side-item row">
+                <img src="assets/images/pad-thai.jpg" alt="pad-thai" class="img-side col-xl-3 col-lg-4 col-sm-4 col-4">
+                <div class="description col-xl-9  col-lg-8 colg-sm-8 col-8">
+                  <a class="header-side" href="#">Pad Thai</a>
+                  <div class="sub-header row">
+                    <div class="flex-items col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"><fa-icon [icon]="calendar"></fa-icon> July 22, 2020</div>
+                    <div class="flex-items col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"><fa-icon [icon]="likes"></fa-icon> 47</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="container">
+              <div class="side-item row">
+                <img src="assets/images/ramen.jpg" alt="ramen" class="img-side col-xl-3 col-lg-4 col-sm-4 col-4">
+                <div class="description col-xl-9  col-lg-8 colg-sm-8 col-8">
+                  <a class="header-side" href="#">Ramen</a>
+                  <div class="sub-header row">
+                    <div class="flex-items col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"><fa-icon [icon]="calendar"></fa-icon> June 16, 2020</div>
+                    <div class="flex-items col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"><fa-icon [icon]="likes"></fa-icon> 142</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="container">
+              <div class="side-item row">
+                <img src="assets/images/udon.jpg" alt="udon" class="img-side col-xl-3 col-lg-4 col-sm-4 col-4">
+                <div class="description col-xl-9  col-lg-8 colg-sm-8 col-8">
+                  <a class="header-side" href="#">Udon</a>
+                  <div class="sub-header row">
+                    <div class="flex-items col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"><fa-icon [icon]="calendar"></fa-icon> March 15, 2020</div>
+                    <div class="flex-items col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"><fa-icon [icon]="likes"></fa-icon> 54</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <div class="tags">
+            <h2>TAGS</h2>
+            <div class="container">
+              <div class="row">
+                <a href="#" class="tag-item col-xl-6 col-lg-2 col-sm-2 col-4">Noodle</a>
+                <a href="#" class="tag-item col-xl-6 col-lg-2 col-sm-2 col-4">Spicy</a>
+                <a href="#" class="tag-item col-xl-6 col-lg-2 col-sm-2 col-4">Oily</a>
+                <a href="#" class="tag-item col-xl-6 col-lg-2 col-sm-2 col-4">Crunchy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="social footer-item col-xl-4 col-xl-4 col-sm-12 col-12">
+          <a href="#" class="logo">Foodyy</a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+          <div class="contacts">
+            <ul>
+              <li class="contact-item"><fa-icon [icon]="phone"></fa-icon></li>
+              <li class="contact-item"><fa-icon [icon]="mail"></fa-icon></li>
+              <li class="contact-item"><fa-icon [icon]="map"></fa-icon></li>
+              <li class="contact-item"><fa-icon [icon]="fax"></fa-icon></li>
+              <li class="contact-item"><fa-icon [icon]="id"></fa-icon></li>
+            </ul>
+          </div>
+        </div>
+        <div class="links footer-item col-xl-2 col-xl-2 col-sm-12 col-12">
+          <h3>LINKS</h3>
+          <ul class="vertical-menu ">
+            <li class="vm-item"><a href="#">Top Food</a></li>
+            <li class="vm-item"><a href="#">New Recipes</a></li>
+            <li class="vm-item"><a href="#">How - to</a></li>
+            <li class="vm-item"><a href="#">Tips</a></li>
+            <li class="vm-item"><a href="#">Food Tour</a></li>
+          </ul>
+        </div>
+        <div class="menus footer-item col-xl-2 col-xl-2 col-sm-12 col-12">
+          <h3>MENU</h3>
+          <ul class="vertical-menu">
+            <li class="vm-item"><a href="#">Home</a></li>
+            <li class="vm-item"><a href="#">Food</a></li>
+            <li class="vm-item"><a href="#">Gallery</a></li>
+            <li class="vm-item active"><a href="#">Blog</a></li>
+            <li class="vm-item"><a href="#">About</a></li>
+            <li class="vm-item"><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="gallery footer-item col-xl-4 col-xl-4 col-sm-12 col-12p">
+          <h3>GALLERY</h3>
+          <div class="gallery-flex">
+            <ul>
+              <li class="gallery-item"><img src="assets/images/burgers.jpg" alt="" class="gallery-img"></li>
+              <li class="gallery-item"><img src="assets/images/lasagna.jpg" alt="" class="gallery-img"></li>
+              <li class="gallery-item"><img src="assets/images/pizza.jpg" alt="" class="gallery-img"></li>
+              <li class="gallery-item"><img src="assets/images/steak.jpg" alt="" class="gallery-img"></li>
+              <li class="gallery-item"><img src="assets/images/sushi.jpg" alt="" class="gallery-img"></li>
+              <li class="gallery-item"><img src="assets/images/tacos.jpg" alt="" class="gallery-img"></li>
+              <li class="gallery-item"><img src="assets/images/noodle.jpg" alt="" class="gallery-img"></li>
+              <li class="gallery-item"><img src="assets/images/salmon.jpg" alt="" class="gallery-img"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="small-nav footer-nav navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container">
+        <a href="#" class="navbar-brand">© 2020 Foodyy</a>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Food</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link active">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </footer>
-</section>
+
+</div>
