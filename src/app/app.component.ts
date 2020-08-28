@@ -9,7 +9,7 @@ import { faCalendarAlt, faFlag, faThumbsUp, faSearch, faArrowCircleLeft, faArrow
 export class AppComponent {
 
   navbarCollapsed: Boolean = true;
- 
+
   onToggleNavbarCollapsed(): void {
     this.navbarCollapsed = !this.navbarCollapsed;
   }

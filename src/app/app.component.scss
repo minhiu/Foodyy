@@ -6,12 +6,6 @@ $menu-font: 'Bebas Neue', cursive;
 
 $special-color: #81b214;
 $heading-color: #222831;
-%imgs-main {
-    width: 300px;
-    max-height: 250px;
-    object-fit: cover;
-    padding: 0;
-}
 
 %headers-main {
     color: $heading-color;
@@ -68,6 +62,10 @@ $heading-color: #222831;
 
     .main {
         margin-bottom: 25px;
+    }
+
+    .sub-menu {
+        display: none !important;
     }
 }
 
@@ -233,7 +231,6 @@ li {
             padding: 0;
             
             .navbar {
-                // padding: 20px 0 0;
 
                 .navbar-brand {
                     padding: 0;
@@ -257,27 +254,132 @@ li {
                 }
 
                 #main-nav {
+                    padding-top: 20px;
                     padding-bottom: 0;
 
                     .nav-item {
                         display: inline;
                         margin-left: 60px;
+
+                        .nav-link { 
+                            font-family: $menu-font;
+                            font-size: 35px;
+                            color: $heading-color;
+                        }
+            
+                        .nav-link:hover {
+                            color: white;
+                            transition: 0.2s ease-in;
+                        }
+                    
+                        .active {
+                            color: white;
+                            text-decoration: underline;
+                        }
+
+                        .drop-down-horizontal {
+                            background-color: transparent !important;
+                            border: none !important;
+                            display: flex;
+                            left: 200px;
+
+                            li {
+                                margin: auto 10px;
+                                position: relative;
+                            }
+
+                            img {
+                                border: 0.5px solid black;
+                                border-radius: 50px;
+                                height: 75px;
+                                width: 75px;
+                                object-fit: cover;
+                            }
+
+                            li:hover {
+                                animation: sub-menu-up-and-down;
+                                animation-duration: 0.5s;
+                                animation-fill-mode: backwards;
+                            }
+
+                            @keyframes sub-menu-up-and-down {
+                                0% {
+                                    top: 20px;
+                                }
+
+                                50% {
+                                    top: -10px;
+                                }
+
+                                100% {
+                                    top: 0;
+                                }
+                            }
+                        }
+
+                        .sub-menu {
+                            background-color: white;
+                            border: 1px solid black;
+                            text-align: left;
+                            text-decoration: none;
+                            visibility: hidden;
+                            position: absolute;
+                            top: 120%;
+                            opacity: 0;
+                            transition: all 0.3s ease 0s;
+                            li:hover a {
+                                position: relative;
+                                transition: ease-out;
+                                animation-name: sub-menu-to-right;
+                                animation-duration: 0.5s;
+                                animation-fill-mode: forwards;
+                            }
+
+                            @keyframes sub-menu-to-right {
+                                from {
+                                    left: 0px;
+                                }
+
+                                to {
+                                    left: 10px;
+                                }
+                            }
+
+                            a {
+                                color: $heading-color;
+                                font-family: $menu-font;
+                            }
+                        }
+
+                        .drop-down-vertical {
+                            padding: 5px 40px 5px 20px;
+
+                            li {
+                                margin: 10px auto;
+                            }
+                        }
                     }
-                
-                    .nav-link { 
-                        font-family: $menu-font;
-                        font-size: 30px;
-                        color: $heading-color;
+
+                    .nav-item:hover .sub-menu {
+                        visibility: visible; 
+                        top: 100%;
+                            opacity: 1;
                     }
-        
-                    .nav-link:hover {
-                        color: white;
-                        transition: 0.2s ease-in;
+
+                    @keyframes sub-menu-fade-up {
+                        from {
+                            top: 150px;
+                            opacity: 0;
+                        }
+
+                        to {
+                            top: 75px;
+                            opacity: 1;
+                        }
                     }
-                
-                    .active {
-                        color: white;
-                        text-decoration: underline;
+
+                    .drop-down {
+                        display: relative;
                     }
                 }
             }
@@ -313,10 +415,26 @@ li {
             .main-item {
                 border: 0.05rem solid #eaeaea;
                 margin-bottom: 40px;
-
-                .img-main {
-                    @extend %imgs-main;
+                
+                div {
+                    overflow: hidden;
+                    padding: 0;
+                    .img-main {
+                        width: 100%;
+                        height: auto;
+                        padding: 0;
+                        transition: transform 2s ease 0s, filter 1.5s ease-in-out 1s;
+                        transform-origin: center center;
+                        filter: brightness(100%);
+                        overflow: hidden;
+                    }
+    
+                    .img-main:hover {
+                        filter: brightness(130%);
+                        transform: scale(1.3);
+                    }
                 }
+                
 
                 .description {
                     padding: 30px;
@@ -492,8 +610,7 @@ li {
                     color: $special-color;
                 }
             }
-        }
-        
+        } 
     }
 
     footer {
