@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "foodyy-efdb7": {
+      "hosting": {
+        "foodyy": [
+          "foodyy-efdb7"
+        ]
+      }
+    }
+  }
+}

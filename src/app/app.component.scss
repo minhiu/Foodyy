@@ -85,16 +85,20 @@ $heading-color: #222831;
         }
     }
 
-    .main {
-        margin-bottom: 25px;
-    }
+    #content {
+        padding: 50px 0 !important;
 
-    .page-item {
-        margin: 0 5% !important;
-    }
-
-    .menu-header {
-        margin: 7% 0 !important;
+        .main {
+            margin-bottom: 25px;
+        }
+    
+        .page-item {
+            margin: 0 5% !important;
+        }
+    
+        .menu-header {
+            margin: 7% 0 !important;
+        }
     }
 
     .footer-nav {
@@ -109,6 +113,10 @@ $heading-color: #222831;
         .container {
             padding: 0 !important;
         }
+    }
+
+    #content {
+        padding: 20px 0 !important;
     }
 }
 
@@ -132,15 +140,8 @@ $heading-color: #222831;
         }
     }
 
-    body {
-        .page-item {
-            margin: 0 5% !important;
-        }
-
-        .page-item:hover, .cur-page {
-            background-color: white !important;
-            font-weight: 600 !important;
-        }
+    .img-side {
+        max-height: 75px;
     }
 
     footer {
