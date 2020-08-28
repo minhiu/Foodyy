@@ -104,6 +104,14 @@ $heading-color: #222831;
     }
 }
 
+@media only screen and (max-width: 576px) {
+    .small-nav {
+        .container {
+            padding: 0 !important;
+        }
+    }
+}
+
 @media only screen and (min-width: 320px) and (max-width: 479px) {
     header {
         background-size: 100% 400px !important;
@@ -186,6 +194,10 @@ li {
         text-align: center;
         
         .small-nav {
+
+            .container {
+                padding: 0 16px;
+            }
 
             a {
                 display: inline;
