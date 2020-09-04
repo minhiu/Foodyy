@@ -1,0 +1,83 @@
+@import '../../../../assets/styles/styles.scss';
+
+.footer-item {
+    margin-top: 2%;
+
+    h3 {
+        color: $heading-color;
+        font-family: 'Bebas Neue', cursive;
+        font-size: 1.5rem;
+        margin-bottom: 5%;
+    }
+
+    .logo {
+        color: $heading-color;
+        font-size: 2rem;
+        text-decoration: none;
+    }
+
+    .logo:hover {
+        color: white;
+        transition: 0.2s ease-in;
+    }
+}
+
+.social {
+    color: white;
+
+    p {
+        line-height: 2;
+        margin: 5% 0;
+    }
+
+    ul {
+        li {
+            display: inline;
+        }
+    }
+
+    .contact-item {
+        margin: 0 10% 0 0;
+    }
+}
+
+.vertical-menu {
+    .vm-item {
+        margin: 5% 0 5%;
+
+        span {
+            font-size: 0.7rem;
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            color: $heading-color;
+            transition: 0.2s ease-in;
+        }
+    }
+}
+.gallery {
+
+    .gallery-flex {
+        flex-wrap: wrap;
+        padding-top: 0;
+
+        ul {
+            li {
+                display: inline;  
+            }
+        }
+
+        .gallery-img {
+            height: 75px;
+            width: 75px;
+            object-fit: cover;
+            margin: 0 10px 10px 0;
+        }
+    }
+}

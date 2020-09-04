@@ -1,0 +1,180 @@
+@import '../../../../assets/styles/styles.scss';
+
+.container {
+    padding: 0;
+    
+    .navbar {
+
+        .navbar-brand {
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            background-color: $heading-color;
+        }
+
+        .logo {
+            font-size: 3rem;
+        }
+
+        .logo:hover {
+            color: $heading-color;
+            transition: 0.2s ease-in;
+        }
+
+        #main-nav {
+            padding-top: 20px;
+            padding-bottom: 0;
+
+            .nav-item {
+                display: inline;
+                margin-left: 60px;
+
+                .nav-link { 
+                    font-family: $menu-font;
+                    font-size: 35px;
+                    color: $heading-color;
+                }
+    
+                .nav-link:hover {
+                    color: white;
+                    transition: 0.2s ease-in;
+                }
+            
+                .active {
+                    color: white;
+                    text-decoration: underline;
+                }
+
+                .drop-down-horizontal {
+                    background-color: transparent !important;
+                    border: none !important;
+                    display: flex;
+                    left: 200px;
+
+                    li {
+                        margin: auto 10px;
+                        position: relative;
+                    }
+
+                    img {
+                        border: 0.5px solid black;
+                        border-radius: 50px;
+                        height: 75px;
+                        width: 75px;
+                        object-fit: cover;
+                    }
+
+                    li:hover {
+                        animation: sub-menu-up-and-down;
+                        animation-duration: 0.5s;
+                        animation-fill-mode: backwards;
+                    }
+
+                    @keyframes sub-menu-up-and-down {
+                        0% {
+                            top: 20px;
+                        }
+
+                        50% {
+                            top: -10px;
+                        }
+
+                        100% {
+                            top: 0;
+                        }
+                    }
+                }
+
+                .sub-menu {
+                    background-color: white;
+                    border: 1px solid black;
+                    text-align: left;
+                    text-decoration: none;
+                    visibility: hidden;
+                    position: absolute;
+                    top: 120%;
+                    opacity: 0;
+                    transition: all 0.3s ease 0s;
+                    li:hover a {
+                        position: relative;
+                        transition: ease-out;
+                        animation-name: sub-menu-to-right;
+                        animation-duration: 0.5s;
+                        animation-fill-mode: forwards;
+                    }
+
+                    @keyframes sub-menu-to-right {
+                        from {
+                            left: 0px;
+                        }
+
+                        to {
+                            left: 10px;
+                        }
+                    }
+
+                    a {
+                        color: $heading-color;
+                        font-family: $menu-font;
+                    }
+                }
+
+                .drop-down-vertical {
+                    padding: 5px 40px 5px 20px;
+
+                    li {
+                        margin: 10px auto;
+                    }
+                }
+            }
+
+            .nav-item:hover .sub-menu {
+                visibility: visible; 
+                top: 100%;
+                opacity: 1;
+            }
+
+            @keyframes sub-menu-fade-up {
+                from {
+                    top: 150px;
+                    opacity: 0;
+                }
+
+                to {
+                    top: 75px;
+                    opacity: 1;
+                }
+            }
+
+            .drop-down {
+                display: relative;
+            }
+        }
+    }
+
+    div {
+        padding-bottom: 10px;
+
+        h1 {
+            color: white;
+            font-family: $main-font;
+            font-size: 3rem;
+            margin: 70px auto 50px;
+        }
+
+        .menu-breadcrumb {
+            color: $heading-color;
+            font-style: italic;
+        }
+
+        .menu-breadcrumb:hover {
+            color: white;
+            transition: 0.2s ease-in;
+        }
+    }
+}

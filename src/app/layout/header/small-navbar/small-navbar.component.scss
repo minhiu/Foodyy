@@ -1,0 +1,36 @@
+@import '../../../../assets/styles/styles.scss';
+
+.small-nav {
+    .container {
+        padding: 0 16px;
+    }
+
+    a {
+        display: inline;
+    }
+    
+    ul {
+        margin-bottom: 0;
+        display: flex;
+    }
+
+    .navbar-brand {
+        padding: 0;
+
+        .contact-item {
+            font-size: 15px;
+            margin: 0 15px 0 0;
+        }
+    }
+
+    .collapse {
+        padding: 0;
+
+        .nav-item {
+            margin-left: 20px;
+        }
+        .nav-link {
+            padding-bottom: 0;
+        }
+    }
+}

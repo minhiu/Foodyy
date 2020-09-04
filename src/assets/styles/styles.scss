@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&family=Crimson+Text&family=Satisfy&family=Roboto&family=Lora:ital@1&display=swap');
+
+$main-font: 'Roboto', sans-serif;
+$p-font: 'Crimson Text', serif;
+$menu-font: 'Bebas Neue', cursive;
+
+$special-color: #81b214;
+$heading-color: #222831;
+
+%headers-main {
+    color: $heading-color;
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+// *** Responsive Desgin ***
+// PC
+@media only screen and (min-width: 1200px) {
+    // Footer 
+    .links, .menus, .gallery {
+        display: block !important;
+    }
+}
+
+// iPad Pro
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    // Body
+    .main {
+        padding-bottom: 5%;
+    }
+
+    #main-nav {
+        padding-bottom: 0;
+
+        .nav-item {
+            margin-left: 30px !important;
+        }
+    }
+}
+
+// iPad
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    // Header
+    .logo {
+        font-size: 2rem !important;
+    }
+
+    #main-nav {
+        padding-bottom: 0;
+
+        .nav-item {
+            margin-left: 20px !important;
+
+            .nav-link {
+                font-size: 1.5rem !important;
+            }
+        }
+    }
+    .menu-header {
+        font-size: 2rem !important;
+        margin: 7% 0 !important;
+    }
+
+    .main {
+        margin-bottom: 25px;
+    }
+
+    .sub-menu {
+        display: none !important;
+    }
+}
+
+// Horizontal Mobile
+@media only screen and (max-width: 767px) {
+    .nav-link {
+        font-size: 1.2rem !important;
+        margin: 1% !important;
+        padding: 0 !important;
+    }
+
+    #main-nav {
+        .nav-item {
+            margin-left: 0 !important;
+        }
+    }
+
+    #content {
+        padding: 50px 0 !important;
+
+        .main {
+            margin-bottom: 25px;
+        }
+    
+        .page-item {
+            margin: 0 5% !important;
+        }
+    
+        .menu-header {
+            margin: 7% 0 !important;
+        }
+    }
+
+    .footer-nav {
+        .navbar-nav {
+            display: none;
+        }
+    }
+}
+
+// Misc Fixes
+@media only screen and (max-width: 576px) {
+    .small-nav {
+        .container {
+            padding: 0 !important;
+        }
+    }
+
+    #content {
+        padding: 20px 0 !important;
+    }
+}
+
+// Mobile
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+    header {
+        background-size: 100% 400px !important;
+
+        .navbar-nav {
+            padding-top: 10%;
+        }
+
+        #main-nav {
+            .nav-item {
+                margin-left: 0 !important;
+            }
+        }
+
+        .menu-header {
+            font-size: 2rem !important;
+            margin: 15% 0 !important;
+        }
+    }
+
+    .img-side {
+        max-height: 75px;
+    }
+
+    footer {
+        background-size: 100% 400px !important;
+    }
+}
+
+// Hide Footer for mobile devices
+.links, .menus, .gallery {
+    display: none;
+}
+
+// No dots before ul
+li {
+    list-style-type: none;
+}
+
+// Both Small Nav
+.small-nav {
+    background-color: black !important;
+    color: white;
+    font-size: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+// Logo Style
+.logo {
+    color: white;
+    font-family: 'Pacifico', cursive;
+}
+
+// Date/Category/Likes under Item names
+.description {
+    .sub-header {
+        .flex-items {
+            color: grey;
+            font-size: 0.8rem;
+            padding-right: 0;
+        }
+    }
+}

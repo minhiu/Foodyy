@@ -1,0 +1,110 @@
+@import '../../../assets/styles/styles.scss';
+
+.sidebar {
+    vertical-align: top;
+    position: relative;
+
+    h2 {
+        font-family: $main-font;
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin: 10% 0 5%;
+    }
+
+    h2::after {
+        content: "";
+        display: block;
+        width: 20%;
+        padding: 10px 0 0;
+        margin-bottom: 30px;
+        border-bottom: 3px solid $special-color;
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url("../../../assets/icons/search-solid.svg");
+        background-size: 20px 20px;
+        background-position: 95% 50%; 
+        background-repeat: no-repeat;
+        padding: 8px 20px;
+        margin-bottom: 20px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+    }
+    
+    button {
+        background-color: #f9f7f7;
+        color: $special-color;
+        height: 36px;
+        width: 36px;
+    }
+    
+    button:hover {
+        background-color: #dbe2ef;
+        transition: ease-in;
+    }
+    
+    .categories {
+        li:after {
+            content: '';
+            display: block;
+            padding: 5px 0;
+            margin-bottom: 10px;
+            border-bottom: 0.2px solid #dddddd;        
+        }
+
+        a {
+            color: $heading-color;
+            text-decoration: none;
+        }
+    
+        a:hover {
+            font-weight: 800;
+        }
+    }
+
+    .recent-post {
+        .side-item {
+            margin-bottom: 5%;
+        }
+
+        .img-side {
+            padding: 0;
+            object-fit: cover;
+        }
+    
+        .header-side {
+            color: $heading-color;
+            font-family: $main-font;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0 0 3% 0;
+            text-decoration: none;
+        }
+        
+        .header-side:hover {
+            color: $special-color;
+            transition: 0.2s ease-in;
+        }
+    }
+    
+    .tags {
+        margin-bottom: 5%;
+
+        .tag-item {
+            color: $heading-color;
+            background-color: #e0ece4;
+            text-decoration: none;
+        }
+
+        .tag-item:hover {
+            background-color: $special-color;
+            transition: 0.2s ease-in;
+        }
+    }
+}

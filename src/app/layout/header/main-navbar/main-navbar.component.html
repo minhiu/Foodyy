@@ -1,0 +1,62 @@
+<div class="container">
+    <nav class="navbar navbar-expand-md navbar-dark">
+      <a href="#" class="logo navbar-brand">Foodyy</a>
+      <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-toggle="collapse" 
+        data-target="#main-nav" 
+        aria-controls="main-nav"
+        aria-expanded="true"
+        (click)="onToggleNavbarCollapsed()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" [ngClass]="{ show: !navbarCollapsed }" id="main-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item drop-down">
+            <a href="#" class="nav-link dropdown-toggle">Food</a>
+            <ul class="sub-menu drop-down-vertical">
+              <li><a href="#">Western Food</a></li>
+              <li><a href="#">Eastern Food</a></li>
+              <li><a href="#">Middle Eastern Food</a></li>
+              <li><a href="#">Asian Food</a></li>
+              <li><a href="#">Indian Food</a></li>
+            </ul>
+          </li>
+          <li class="nav-item drop-down">
+            <a href="#" class="nav-link dropdown-toggle">Gallery</a>
+            <ul class="sub-menu drop-down-horizontal">
+              <li class="gallery-item"><img src="assets/images/burgers.jpg" alt="" class="gallery-img"></li>
+              <li class="gallery-item"><img src="assets/images/lasagna.jpg" alt="" class="gallery-img"></li>
+              <li class="gallery-item"><img src="assets/images/pizza.jpg" alt="" class="gallery-img"></li>
+              <li class="gallery-item"><img src="assets/images/steak.jpg" alt="" class="gallery-img"></li>
+              <li class="gallery-item"><img src="assets/images/sushi.jpg" alt="" class="gallery-img"></li>
+              <li class="gallery-item"><img src="assets/images/tacos.jpg" alt="" class="gallery-img"></li>
+              <li class="gallery-item"><img src="assets/images/noodle.jpg" alt="" class="gallery-img"></li>
+              <li class="gallery-item"><img src="assets/images/salmon.jpg" alt="" class="gallery-img"></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link active">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div *ngIf="navbarCollapsed">
+      <h1 class="menu-header">"BLOG LIST"</h1>
+      <a href="#" class="menu-breadcrumb">Home</a>
+      <span> > </span>
+      <a href="#" class="menu-breadcrumb">Blog</a>
+    </div>
+  </div>

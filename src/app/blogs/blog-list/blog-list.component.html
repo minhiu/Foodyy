@@ -1,0 +1,38 @@
+<div id="wrapper">
+    <app-header></app-header>
+    <section id="content">
+        <div class="container">
+            <div class="row">
+                <div class="main col-xl-9 col-lg-12 col-md-12">
+                    <div class="main-item row" *ngFor="let foodItem of item">
+                        <div class="col-xl-5 col-lg-4 col-md-4 col-sm-12 col-12">
+                            <img src="{{ foodItem.imgSrc }}" alt="{{ foodItem.imgAlt }}" class="img-main">
+                        </div>
+                        <div class="description col-xl-7 col-lg-8 col-md-8 col-sm-12 col-12">
+                            <div class="header-main">
+                            <h2>{{ foodItem.name }}</h2>
+                            <div class="sub-header row">
+                                <div class="flex-items col-xl-4 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="calendar"></fa-icon> {{ foodItem.date }}</div>
+                                <div class="flex-items col-xl-4 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="flag"></fa-icon> {{ foodItem.category }}</div>
+                                <div class="flex-items col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><fa-icon [icon]="likes"></fa-icon> {{ foodItem.likes }}</div>
+                            </div>
+                            </div>
+                            <p class="text-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ...</p>
+                            <a routerLink="/blog-list/{{foodItem.id}}" class="read-more">Read more >></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <app-pages></app-pages>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-12 col-md-12">  
+                    <app-side-bar></app-side-bar>
+                </div>
+            </div>
+        </div>
+    </section>
+    <app-footer></app-footer>
+  </div>
+  
+
+

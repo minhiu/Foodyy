@@ -1,0 +1,32 @@
+@import '../../../assets/styles/styles.scss';
+
+.pages {
+    justify-content: center;
+    
+    ul {
+        text-align: center;
+
+        li {
+            display: inline;
+
+            .page-item {
+                font-size: 1.2rem;
+                color: $heading-color;
+                margin: 0 10px;  
+            
+                a {
+                    color: $heading-color;
+                    text-decoration: $heading-color;
+                }
+            }
+            
+            .page-item:hover {
+                color: $special-color;
+            }
+            
+            .cur-page {
+                color: $special-color;
+            }
+        }
+    } 
+}
