@@ -1,1 +1,34 @@
-<p>Hello </p>
+<div id="wrapper">
+    <app-header></app-header>
+    <section id="content">
+        <div class="container">
+            <div class="row">
+                <div class="main col-xl-9 col-lg-12 col-md-12">
+                    <div class="main-item row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <img src="{{ list.imgSrc }}" alt="{{ list.imgAlt }}" class="img-main">
+                        </div>
+                        <div class="description col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="header-main">
+                            <h2>{{ list.name }}</h2>
+                            <div class="sub-header row">
+                                <div class="flex-items col-xl-4 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="calendar"></fa-icon> {{ list.date }}</div>
+                                <div class="flex-items col-xl-4 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="flag"></fa-icon> {{ list.category }}</div>
+                                <div class="flex-items col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><fa-icon [icon]="likes"></fa-icon> {{ list.likes }}</div>
+                            </div>
+                            </div>
+                            <p class="text-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud<p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-12 col-md-12">  
+                    <app-side-bar></app-side-bar>
+                </div>
+            </div>
+        </div>
+    </section>
+    <app-footer></app-footer>
+  </div>
+  
+
+

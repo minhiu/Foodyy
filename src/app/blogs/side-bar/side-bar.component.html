@@ -13,58 +13,18 @@
 
     <div class="recent-post">
         <h2>RECENT POST</h2>
-        <div class="container">
+        <div class="container" *ngFor="let list of listBlog">
             <div class="side-item row">
-                <img src="assets/images/pho-bo.jpeg" alt="pho-bo" class="img-side col-xl-3 col-lg-4 col-sm-4 col-4">
+                <img src="{{ list.imgSrc }}" alt="{{ list.imgAlt }}" class="img-side col-xl-3 col-lg-4 col-sm-4 col-4">
                 <div class="description col-xl-9 col-lg-8 colg-sm-8 col-8">
-                    <a class="header-side" href="#">Pho Bo</a>
+                    <a [routerLink]="['/blog-list', list.id]" class="header-side">{{ list.name }}</a>
                     <div class="sub-header row">
-                        <div class="flex-items col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"><fa-icon [icon]="calendar"></fa-icon> August 24, 2020</div>
-                        <div class="flex-items col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"><fa-icon [icon]="likes"></fa-icon> 96</div>
+                        <div class="flex-items col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"><fa-icon [icon]="calendar"></fa-icon> {{ list.date }}</div>
+                        <div class="flex-items col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"><fa-icon [icon]="likes"></fa-icon> {{ list.likes }}</div>
                     </div>
                 </div>
             </div>
         </div>
-    
-        <div class="container">
-            <div class="side-item row">
-                <img src="assets/images/pad-thai.jpg" alt="pad-thai" class="img-side col-xl-3 col-lg-4 col-sm-4 col-4">
-                <div class="description col-xl-9  col-lg-8 colg-sm-8 col-8">
-                    <a class="header-side" href="#">Pad Thai</a>
-                    <div class="sub-header row">
-                        <div class="flex-items col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"><fa-icon [icon]="calendar"></fa-icon> July 22, 2020</div>
-                        <div class="flex-items col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"><fa-icon [icon]="likes"></fa-icon> 47</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <div class="container">
-            <div class="side-item row">
-                <img src="assets/images/ramen.jpg" alt="ramen" class="img-side col-xl-3 col-lg-4 col-sm-4 col-4">
-                <div class="description col-xl-9  col-lg-8 colg-sm-8 col-8">
-                    <a class="header-side" href="#">Ramen</a>
-                    <div class="sub-header row">
-                        <div class="flex-items col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"><fa-icon [icon]="calendar"></fa-icon> June 16, 2020</div>
-                        <div class="flex-items col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"><fa-icon [icon]="likes"></fa-icon> 142</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <div class="container">
-            <div class="side-item row">
-                <img src="assets/images/udon.jpg" alt="udon" class="img-side col-xl-3 col-lg-4 col-sm-4 col-4">
-                <div class="description col-xl-9  col-lg-8 colg-sm-8 col-8">
-                    <a class="header-side" href="#">Udon</a>
-                    <div class="sub-header row">
-                        <div class="flex-items col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"><fa-icon [icon]="calendar"></fa-icon> March 15, 2020</div>
-                        <div class="flex-items col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"><fa-icon [icon]="likes"></fa-icon> 54</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
     </div>
 
     <div class="tags">

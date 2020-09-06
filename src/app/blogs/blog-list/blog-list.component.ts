@@ -1,4 +1,4 @@
-import { ListBlog } from '../item.model';
+import { ListBlog } from '../list-blog.model';
 import { Component, OnInit } from '@angular/core';
 import { faCalendar, faFlag, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 
