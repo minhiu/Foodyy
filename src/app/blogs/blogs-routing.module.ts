@@ -1,3 +1,4 @@
+import { BlogListResolverService } from './blog-list/blog-list-resolver.service';
 import { BlogsComponent } from './blogs.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -6,12 +7,15 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 
 const routes: Routes = [
   {
-    path: 'blog-list',
+    path: '',
     component: BlogsComponent,
     children: [
       {
         path: '',
-        component: BlogListComponent
+        component: BlogListComponent,
+        resolve: {
+          blogList: BlogListResolverService
+        },
       },
       {
         path: ':id',

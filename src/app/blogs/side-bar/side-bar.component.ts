@@ -1,6 +1,7 @@
+import { listBlogData } from './../../core/service/data-fake/list-blog-data';
 import { Component, OnInit } from '@angular/core';
 import { faCalendar, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
-import { ListBlog } from '../list-blog.model';
+
 @Component({
   selector: 'app-side-bar',
   templateUrl: './side-bar.component.html',
@@ -9,7 +10,7 @@ import { ListBlog } from '../list-blog.model';
 export class SideBarComponent implements OnInit {
   calendar = faCalendar;
   likes = faThumbsUp;
-  listBlog = ListBlog;
+  listBlog = listBlogData;
 
   constructor() { }
 

@@ -1,6 +1,6 @@
+import { listBlogData } from './../../core/service/data-fake/list-blog-data';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ListBlog } from '../list-blog.model';
 import { faCalendar, faFlag, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
 
@@ -22,12 +22,12 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.id = parseInt(this.activatedRoute.snapshot.params['id']);
-    this.list = ListBlog.find(list => list.id === this.id);
+    this.list = listBlogData.find(list => list.id === this.id);
     
     this.paramsSubscription = this.activatedRoute.params.subscribe( 
       (params: Params) => {
         this.id = parseInt(params['id']);
-        this.list = ListBlog.find(list => list.id === this.id);
+        this.list = listBlogData.find(list => list.id === this.id);
       }
     );
   }

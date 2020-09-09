@@ -11,7 +11,25 @@
         .main-item {
             border: 0.05rem solid #eaeaea;
             margin-bottom: 40px;
-            
+            position: relative;
+
+            .list-modification {
+                position: absolute;
+                right: 15px;
+                bottom: 5px;
+                visibility: hidden;
+                opacity: 0;
+
+                ul {
+                    margin: 0;
+
+                    li {
+                        display: inline;
+                        padding: 0 5px;
+                    }
+                }   
+            }
+
             div {
                 overflow: hidden;
                 padding: 0;
@@ -39,7 +57,29 @@
                     h2 {
                         @extend %headers-main;
                     }
-        
+
+                    form {
+                        position: relative;
+
+                        label {
+                            margin: 0;
+                        }
+    
+                        button {
+                            height: 28px;
+                            border: 0;
+                            padding: 0 10px;
+                            margin-left: 25px;
+                        }
+    
+                        a {
+                            color: red;
+                            font-size: 20px;
+                            position: absolute;
+                            right: 20px;
+                        }
+                    }
+                    
                     .sub-header {
                         margin-bottom: 10px;
         
@@ -68,6 +108,12 @@
                     transition: 0.2s ease-in-out;
                 }
             }
+        }
+
+        .main-item:hover .list-modification {
+            visibility: visible;
+            opacity: 1;
+            transition: 0.5s ease-in-out;
         }
     }
 }
