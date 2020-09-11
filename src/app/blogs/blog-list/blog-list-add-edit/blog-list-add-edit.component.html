@@ -1,0 +1,36 @@
+<div class="add-dialog-box">
+    <div class="addItem" *ngIf="isAdding; else editItem">
+        <h2 class="col-xl-12 col-lg-12 col-sm-12 col-xs-12">Add Item</h2>
+        <p>Please enter a name and a description for your new item</p>
+    </div>
+
+    <ng-template #editItem>
+        <div class="editItem">
+            <h2 class="col-xl-12 col-lg-12 col-sm-12 col-xs-12">Edit Item</h2>
+            <p>Please enter a new name and a new description for this item</p>
+        </div>
+    </ng-template>
+    
+    <form [formGroup]="addBlogListForm" (ngSubmit)="onSubmit()" class="row">
+        <label class="col-xl-12 col-lg-12 col-sm-12 col-xs-12">
+            Name: 
+            <input type="text" formControlName="name" class="col-xl-12 col-lg-12 col-sm-12 col-xs-12">
+        </label>
+        
+        <label class="col-xl-12 col-lg-12 col-sm-12 col-xs-12">
+            Description:
+            <textarea type="text" rows="4" style="width: 100%;" formControlName="description" class="col-xl-12 col-lg-12 col-sm-12 col-xs-12"></textarea>
+        </label>
+        
+        <button type="submit" class="btn btn-primary col-xl-5 col-lg-5 col-sm-5 col-xs-5">
+            <p *ngIf="isAdding; else isEditing">Add</p>
+            <ng-template #isEditing>
+                <p>Edit</p>
+            </ng-template>
+        </button>
+    
+        <button (click)="closeDialog()" class="btn btn-light col-xl-5 col-lg-5 col-sm-5 col-xs-5">
+            Cancel
+        </button>
+    </form>
+</div>

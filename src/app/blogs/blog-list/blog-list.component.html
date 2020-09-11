@@ -4,12 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="main col-xl-9 col-lg-12 col-md-12">
-                    <div *ngIf="isAdding">
-                        <app-blog-list-add 
-                            (isAddingFromChild)="getAddedStatus($event)"
-                            (item)="addItem($event)"
-                        ></app-blog-list-add>
-                    </div>
+                    <app-control-content></app-control-content>
                     <div class="main-item row" *ngFor="let foodItem of blogsItem">
                         <div class="col-xl-5 col-lg-4 col-md-4 col-sm-12 col-12">
                             <img src="{{ foodItem.imgSrc }}" alt="{{ foodItem.imgAlt }}" class="img-main">
@@ -29,25 +24,16 @@
                                 </ul>
                             </div>
                             <div class="header-main">
-                            <h2 *ngIf="editingItem !== foodItem.id; else editingBlock">{{ foodItem.name }}</h2>
-                            <ng-template #editingBlock>
-                                <form [formGroup]="editItemForm" (ngSubmit)="onSubmitEdit()">
-                                    <label><input type="text" formControlName="name"></label>
-                                    
-                                    <button type="submit" class="btn btn-primary">Edit Name</button>
-                                
-                                    <a>
-                                        <fa-icon (click)="editingItem = -1" [icon]="close"></fa-icon>
-                                    </a>
-                                </form>
-                            </ng-template>
+                            <h2>{{ foodItem.name }}</h2>
                             <div class="sub-header row">
                                 <div class="flex-items col-xl-4 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="calendar"></fa-icon> {{ foodItem.date }}</div>
                                 <div class="flex-items col-xl-4 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="flag"></fa-icon> {{ foodItem.category }}</div>
                                 <div class="flex-items col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><fa-icon [icon]="likes"></fa-icon> {{ foodItem.likes }}</div>
                             </div>
                             </div>
-                            <p class="text-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ...</p>
+                            <div class="description-wrap">
+                                <p class="text-description">{{ foodItem.description }}</p>
+                            </div>
                             <a routerLink="/blog-list/{{foodItem.id}}" class="read-more">Read more >></a>
                         </div>
                     </div>
@@ -62,7 +48,15 @@
         </div>
     </section>
     <app-footer></app-footer>
-  </div>
-  
+</div>
 
-
+<div class="background-add-edit-dialog" *ngIf="isDialogOpen">
+    <div class="add-edit-dialog">
+        <app-blog-list-add-edit 
+            (isDialogOpen)="getIsDialogOpenStatus($event)"
+            (item)="addEditItem($event)"
+            [isAdding]="isAdding"
+            [editingItem]="editingItem"
+        ></app-blog-list-add-edit>
+    </div>
+</div>

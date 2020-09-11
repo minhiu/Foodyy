@@ -1,8 +1,6 @@
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-
-import { faCalendar, faFlag, faThumbsUp, faWindowClose } from '@fortawesome/free-solid-svg-icons';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { faCalendar, faFlag, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-blog-list',
@@ -14,15 +12,12 @@ export class BlogListComponent implements OnInit {
   calendar = faCalendar;
   flag = faFlag;
   likes = faThumbsUp;
-  close = faWindowClose;
 
   blogsItem: any[];
-  isAdding: boolean = false;
-  editingItem: number;
-
-  editItemForm = new FormGroup({
-    name: new FormControl('')
-  });
+  isDialogOpen: boolean = false;
+  isAdding: boolean;
+  isEditing: boolean;
+  editingItem: any;
 
   constructor(
     private activatedRoute: ActivatedRoute
@@ -36,27 +31,37 @@ export class BlogListComponent implements OnInit {
     )
   }
 
-  onEdit(id) {
-    this.editingItem = id;
+  // onSubmitEdit(itemName: string) {
+  //   let editedItem = this.blogsItem.find( item => item.id === this.editingItem);
+  //   editedItem.name = itemName;
+  //   this.editingItem = -1;
+  // }
+
+  // Emitted status boolean from child
+  getIsDialogOpenStatus(status: boolean) {
+    this.isDialogOpen = status;
   }
 
-  onSubmitEdit() {
-    let editedItem = this.blogsItem.find( item => item.id === this.editingItem);
-    editedItem.name = this.editItemForm.value.name;
-    this.editingItem = -1;
-    this.editItemForm.reset();
+  onEdit(id: number) {
+    this.isAdding = false;
+    this.editingItem = this.blogsItem.find( item => item.id === id);
+    this.isDialogOpen = true;
   }
 
   onAdd() {
     this.isAdding = true;
+    this.isDialogOpen = true;
   }
 
-  getAddedStatus(status: boolean) {
-    this.isAdding = status;
-  }
-
-  addItem(item: Object) {
-    this.blogsItem.unshift(item);
+  // Emitted item from child
+  addEditItem(item: any) {
+    if (this.isAdding) {
+      this.blogsItem.unshift(item);
+      this.isAdding = false;
+    } else {
+      this.editingItem.name = item.name;
+      this.editingItem.description = item.description;
+    }
   }
 
   onDelete(id: number) {
