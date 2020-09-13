@@ -24,12 +24,15 @@
                                 </ul>
                             </div>
                             <div class="header-main">
-                            <h2>{{ foodItem.name }}</h2>
-                            <div class="sub-header row">
-                                <div class="flex-items col-xl-4 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="calendar"></fa-icon> {{ foodItem.date }}</div>
-                                <div class="flex-items col-xl-4 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="flag"></fa-icon> {{ foodItem.category }}</div>
-                                <div class="flex-items col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><fa-icon [icon]="likes"></fa-icon> {{ foodItem.likes }}</div>
-                            </div>
+                                <div class="title row">
+                                    <h2 class="col-xl-6 col-lg-6">{{ foodItem.name }}</h2>
+                                    <p>Server Status: {{ foodItem.serverStatus | serverStatus }}</p>
+                                </div>
+                                <div class="sub-header row">
+                                    <div class="flex-items col-xl-4 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="calendar"></fa-icon> {{ foodItem.date }}</div>
+                                    <div class="flex-items col-xl-4 col-lg-5 col-md-5 col-sm-5 col-5"><fa-icon [icon]="flag"></fa-icon> {{ foodItem.category }}</div>
+                                    <div class="flex-items col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><fa-icon [icon]="likes"></fa-icon> {{ foodItem.likes }}</div>
+                                </div>
                             </div>
                             <div class="description-wrap">
                                 <p class="text-description">{{ foodItem.description }}</p>

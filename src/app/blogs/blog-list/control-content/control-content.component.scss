@@ -28,3 +28,34 @@ button:hover {
     background-color: #dbe2ef;
     transition: ease-in;
 }
+
+.container {
+    background-color: #eee;
+    position: absolute;
+    z-index: 2;
+    width: 300px;
+}
+
+.side-item {
+    margin: 5px 0;
+}
+
+.img-side {
+    padding: 0;
+    object-fit: cover;
+    max-height: 50px;
+}
+
+.header-side {
+    color: $heading-color;
+    font-family: $main-font;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 3% 0;
+    text-decoration: none;
+}
+
+.header-side:hover {
+    color: $special-color;
+    transition: 0.2s ease-in;
+}

@@ -56,10 +56,20 @@
                     padding: 30px;
                     
                     .header-main {
-                        h2 {
-                            @extend %headers-main;
+                        .title {
+                            align-items: center;
+
+                            h2 {
+                                @extend %headers-main;
+                            }
+
+                            p {
+                                color: salmon;
+                                margin: 0;
+                                position: absolute;
+                                right: 25px;
+                            }
                         }
-                        
                         .sub-header {
                             margin-bottom: 10px;
             

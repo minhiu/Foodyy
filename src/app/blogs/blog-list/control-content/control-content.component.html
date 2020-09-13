@@ -1,1 +1,9 @@
-<input type="text" placeholder="Search...">
+<input [(ngModel)]="searchValue" (ngModelChange)="onSearchValueChange($event)" appStringOnly type="text" placeholder="Search...">
+<div class="container">
+    <div class="side-item row" *ngFor="let list of searchedNames">
+        <img src="{{ list.imgSrc }}" alt="{{ list.imgAlt }}" class="img-side col-xl-3 col-lg-4 col-sm-4 col-4">
+        <div class="description col-xl-9 col-lg-8 colg-sm-8 col-8">
+            <a [routerLink]="['/blog-list', list.id]" class="header-side">{{ list.name }}</a>
+        </div>
+    </div>
+</div>

@@ -1,3 +1,6 @@
+import { TextAutofocusDirective } from './../../shared/directives/text-auto-focus.directive';
+import { StringOnlyDirective } from './../../shared/directives/string-only.directive';
+import { ServerStatusPipe } from './../../shared/pipes/server-status.pipe';
 import { BlogListResolverService } from './blog-list/blog-list-resolver.service';
 import { BlogsService } from './../core/service/blogs.service';
 import { NgModule } from '@angular/core';
@@ -21,6 +24,9 @@ import { ControlContentComponent } from './blog-list/control-content/control-con
         BlogsComponent,
         BlogListAddEditComponent,
         ControlContentComponent,
+        ServerStatusPipe,
+        StringOnlyDirective,
+        TextAutofocusDirective
     ],
     imports: [
         CommonModule,
@@ -32,7 +38,8 @@ import { ControlContentComponent } from './blog-list/control-content/control-con
     ],
     providers: [
         BlogsService,
-        BlogListResolverService
+        BlogListResolverService,
+        ServerStatusPipe
     ]
 })
 export class BlogsModule { }
